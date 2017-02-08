@@ -1,90 +1,133 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <title>CS325 Digital Prototype 1</title>
-    <script src="js/phaser.js"></script>
-    <script src="js/main.js"></script>
+   <meta charset="utf-8">
+   <title>CS325 - Digital Prototype 1</title>
+   <script src="js/phaser.js"></script>
+   <script src="js/main.js"></script>
 
-<style>
-body
-{
-    color: #777;
-    font-family: "Avenir", Verdana, sans-serif;
-}
-#readme
-{
-    margin-top: 10px;
-}
-</style>
+   <style>
+   body
+   {
+      color: #777;
+      font-family: "Avenir", Verdana, sans-serif;
+   }
+   #readme
+   {
+      margin-top: 10px;
+   }
+   </style>
 
 </head>
 <body>
-<div id="game"></div>
-<div id="readme">
-<h2>Your game title</h2>
-<ul>
+   <div id="game"></div>
+   <div id="readme">
+      <h2>The Good, the Bad, and the Asteroid</h2>
+      <ul>
 
-<li><strong>High Concept:</strong>
-A one-sentence summary of your game.
-</li>
+         <li><strong>High Concept:</strong>
+            <br>With the aid of very large man-made horseshoes, players battle an oncoming onslaught of
+            <br>asteroids and meteors headed towards Earth.
+         </li><br>
 
-<li><strong>Theme:</strong>
-State which of the Storymatic themes you used.
-</li>
+         <li><strong>Theme:</strong></li>
+         <ul><li>Cowboys</li>
+            <li>Asteroid heading towards Earth</li>
+         </ul><br>
 
-<li><strong>Mandated Variety:</strong>
-State which input, randomness, genre, and play style you used in this prototype.
-</li>
+         <li><strong>Mandated Variety:</strong>
+            <br>The genre of the game is sci-fi arcade, with no objectives in the game aside from
+            <br>accumulating a higher score with each playthrough. The asteroids and meteors spawn at
+            <br>random, therefore there is no fixed technique to the game and players must rely on reflexes.
+         </li><br>
 
-<li><strong>Player Experience Goals:</strong>
-What experience do you want players to have when playing your game?
-</li>
+         <li><strong>Player Experience Goals:</strong></li>
+         <ul><li>Simple arcade gameplay; the game tests player reflexes instead of strategy or logic in
+               <br>a simple arcade-like format.</li>
+            <li>Acculumating score points; the ultimate goal of the player is to score as high as they
+               <br>can before losing the game.</li>
+            <li>Given the format of the game and the types of elements used (horseshoes), a small
+               <br>comedic effort was made to entertain or potentially humor the player.
+            </li>
+         </ul><br>
 
-<li><strong>Gameplay:</strong>
-A paragraph describing the actions the player can perform, the system dynamics, and the core mechanic. Include a concise explanation of the prototype’s inputs and their expected effects (how to play). You can also describe game play that is not in the prototype. You may include mock-up images for parts of the game not in the prototype.
-</li>
+         <li><strong>Gameplay:</strong>
+            <br>Players use a point-and-click interface using the mouse pointer to fling horseshoes in the
+            <br>direction of the asteroids. Players gains +5 points for every asteroid hit, additionally,
+            <br>players start off with 3 health points and lose a health point each time they are hit by
+            <br>an asteroid.
+         </li><br>
 
-<li><strong>Prototype Goal:</strong>
-What game mechanic is this prototype evaluating?
-</li>
+         <li><strong>Prototype Goal:</strong>
+            <br>This prototype is a beginners effort at Phaser and Javascript, and the mechanics tested
+               <br>include:
+                     <ul>
+                        <li>Spawning sprites at random locations on the borders of the game window.</li>
+                        <li>Collectively directing sprites towards a specific point in the game.</li>
+                        <li>Collision and overlay mechanics.</li>
+                        <li>Shooting in the direction of a pointer; taking firing rate into account.</li>
+                     </ul>
+         </li><br>
 
-<li><strong>Features:</strong>
-What are the unique aspects of your game that set it apart?
-</li>
+         <li><strong>Features:</strong>
+            <br>The initial premise of the game was designed in slightly B-rated movie/parody format.
+            <br>No main character or other characters exist in the game, the POV is that of the Earth
+            <br>in space; collectively combatting the asteroids. There is not much unique about the game
+            <br>aside from the concept and the execution.
+         </li><br>
 
-<li><strong>Setting/Premise:</strong>
-A paragraph about the world your game is set in and who the characters are. What makes the game world and its occupants unique and interesting? Do the tokens represent something? If the game has a backstory, put it here. If the game is abstract, then say so.
-</li>
+         <li><strong>Setting/Premise:</strong>
+            <br>An additional feature that was to be added to the game was a parody scene explaining how
+            <br>the human world has collapsed; with society returning to the days of the Old West. Sensing
+            <br>the coming asteroid apocalypse, humans fashioned a large sling to fling equally large
+            <br>horseshoes into space and defend themselves from the asteroid attack.
+         </li><br>
 
-<li><strong>Story:</strong>
-If the game has a story (or you envision a story for the full game), summarize it in a paragraph. How will the dramatic tension interact with the gameplay tension?
-</li>
+         <li><strong>Story:</strong>
+            <br>This game does not have a story and instead focuses on the arcade gameplay mechanics.
+         </li><br>
 
-<li><strong>Target Audience:</strong>
-A single sentence that describes the demographic you're trying to reach.
-</li>
+         <li><strong>Target Audience:</strong>
+            <br>This game is appropriote for all ages, and does not have a specific demographic in mind.
+         </li><br>
 
-<li><strong>Play Time:</strong>
-How long does your game take to play?
-</li>
+         <li><strong>Play Time:</strong>
+            <br>The length of the game depends on how long the player can outlast the asteroids, and therefore
+            <br>can range from a few seconds to potentially 10 minutes or more.
+         </li><br>
 
-<li><strong>Strategies:</strong>
-What player strategies do you expect will be effective at playing this game?
-</li>
+         <li><strong>Strategies:</strong>
+            <br>The game style and mechanics are arcade with emphesis on player hand-eye coordination. Little
+            <br>strategy is needed for the game; especially with enemies spawning at random.
+         </li><br>
 
-<li><strong>Prototype Assets:</strong>
-Did you make your prototype assets from scratch? Did you borrow them? Cite your sources here.
-<ul>
-<li>Bouncing Phaser image: <a href="https://phaser.io/download/logo">Phaser logo</a></li>
-</ul>
-</li>
+         <li><strong>Prototype Assets:</strong>
+            <br>All assets are not original and some were collected from the internet under a "labeled for reuse"
+            <br>tag. These sources include:
+            <ul>
+               <li>Earth image: <a href="https://clipartfest.com/categories/view/3e74253359aa693fe352d3507c7f70d3bad40d67/cartoon-earth-clipart.html">Earth image</a></li>
+               <li>Meteor image: <a href="http://starbound.gamepedia.com/Starbound_Wiki">Meteor image</a></li>
+               <li>Horseshoe image: <a href="http://clubpenguin.wikia.com/wiki/File:Medieval_2013_Potion_Ingredient_horseshoe.png">Horseshoe image</a></li>
+               <li>Space background image: <a href="http://www.psdgraphics.com/backgrounds/night-sky-stars-background/">Space background</a></li>
+               <li>Collision and impact sounds: <a href="http://opengameart.org/">Sounds</a></li>
+            </ul>
+         </li><br>
 
-<li><strong>Prototype Closest Other Game:</strong>
-Which other game most closely resembles your game? If you are borrowing code from a Phaser Example, you must say so here. If you borrow code from elsewhere, you must say so here.
-</li>
+         <li><strong>Prototype Closest Other Game:</strong>
+            <br>A few examples were used for reference from Phaser.io, including:
+            <ul>
+               <li>Shoot the pointer: <a href="https://phaser.io/examples/v2/arcade-physics/shoot-the-pointer">Phaser Example</a></li>
+               <li>Audio sprite: <a href="https://phaser.io/examples/v2/audio/audio-sprite">Phaser Example</a></li>
+               <li>Making your first Phaser game tutorial: <a href="https://phaser.io/tutorials/making-your-first-phaser-game">Phaser Tutorial</a></li>
+            </ul>
+            A YouTube video was used as reference and tutorial as well:
+            <ul>
+               <li>Phaser JS Tutorial Part 1: <a href="https://www.youtube.com/watch?v=9b8f5nVOOUo">YouTube Tutorial</a></li>
+               <li>Phaser JS Tutorial Part 2: <a href="https://www.youtube.com/watch?v=eMXXpyZnNpw">YouTube Tutorial</a></li>
+            </ul>
+         </li><br>
 
-</ul>
-</div>
+      </ul>
+   </div>
 </body>
 </html>
