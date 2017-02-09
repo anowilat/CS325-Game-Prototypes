@@ -7,12 +7,16 @@ window.onload = function() {
 
     function preload() {
 
+      game.load.spritesheet('button', 'assets/start-sheet.png', 150, 64);
+      game.load.spritesheet('reset', 'assets/reset-sheet.png', 150, 64);
+      game.load.image('intro', 'assets/intro.jpg');
       game.load.image('background', 'assets/space.jpg');
       game.load.image('earth', 'assets/globe.png');
       game.load.image('meteor', 'assets/meteor.png');
       game.load.image('horseshoe', 'assets/horseshoe.png');
       game.load.audio('collision', 'assets/boom7.wav');
       game.load.audio('impact', 'assets/boom9.wav');
+
     }
 
     var score = 0;
@@ -22,6 +26,9 @@ window.onload = function() {
     var meteorRate = 2000;
     var nextMeteor = 0;
 
+    var intro;
+    var button;
+    var reset;
     var earth;
     var horseshoes;
     var meteors;
@@ -49,6 +56,11 @@ window.onload = function() {
       meteors.physicsBodyType = Phaser.Physics.ARCADE;
       meteors.createMultiple(200, 'meteor');
 
+      intro = game.add.sprite(0, 0, 'intro');
+      button = game.add.button(game.world.centerX - 78, 400, 'button', startGame, this, 1, 2, 0);
+      reset = game.add.button(game.world.centerX - 78, 400, 'reset', restart, this, 1, 2, 0);
+      reset.visible = false;
+
       collisionFX = game.add.audio('collision');
       impactFX = game.add.audio('impact');
 
@@ -57,16 +69,24 @@ window.onload = function() {
 
     function update() {
 
-      if (game.time.now > nextMeteor){
-         nextMeteor = game.time.now + meteorRate;
-         spawn();
+      if (intro.visible == false){
+         if (game.time.now > nextMeteor){
+            nextMeteor = game.time.now + meteorRate;
+            spawn();
+         }
+         if (game.input.activePointer.isDown && earth.alive == true){
+            fire();
+         }
+         game.physics.arcade.overlap(meteors, horseshoes, collision);
+         game.physics.arcade.overlap(earth, meteors, impact);
       }
-      if (game.input.activePointer.isDown && earth.alive == true){
-         fire();
-      }
-      game.physics.arcade.overlap(meteors, horseshoes, collision);
-      game.physics.arcade.overlap(earth, meteors, impact);
-    }
+   }
+
+   function startGame() {
+
+      button.pendingDestroy = true;
+      intro.visible = false;;
+   }
 
     function spawn() {
 
@@ -117,8 +137,17 @@ window.onload = function() {
       earth.health--;
       if (earth.health == 0){
          earth.kill();
+         reset.visible = true;
       }
+   }
 
+   function restart() {
+
+      reset.visible = false;
+      score = 0;
+      scoreText.text = "score: " + score;
+      earth.revive();
+      earth.health = 3;
    }
 
 };
