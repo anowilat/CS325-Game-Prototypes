@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <title>CS325 - Digital Prototype 1</title>
+   <script src="js/phaser.js"></script>
+   <script src="js/main.js"></script>
+
+   <style>
+   body
+   {
+      color: #777;
+      font-family: "Avenir", Verdana, sans-serif;
+   }
+   #readme
+   {
+      margin-top: 10px;
+   }
+   </style>
+
+</head>
+<body>
+   <div id="game"></div>
+   <div id="readme">
+      <h2>Killer for Hire</h2>
+      <ul>
+
+         <li><strong>High Concept:</strong>
+            <br>Players take on the role of a contracted assassin sent to murder a patient recovering from an organ transplant.
+            <br>To get to the patient, the assassin must navigate through guards patroling the hospital halls and might run into
+            <br>a few obstacles along the way.
+         </li><br>
+
+         <li><strong>Theme:</strong></li>
+         <ul><li>Revenge</li>
+            <li>Organ implants</li>
+         </ul><br>
+
+         <li><strong>Mandated Variety:</strong></li>
+            <ul><li>Input: keyboard</li>
+               <li>Randomness: deterministic</li>
+               <li>Play Styles: explorer</li>
+               <li>Genres: adventure, stealth</li>
+            </ul><br>
+
+         <li><strong>Player Experience Goals:</strong></li>
+         <ul><li>Objectives; the game tries something in the way of requiring players to meet objectives before progressing further.</li>
+            <li>Stealth and suspense; the player must navigate through a few guards and avoid being caught in order to reach their
+            <br>ultimate objective and assassinate the patient.</li>
+            <li>Slight world exploration; the players are given free roam to the (very small) environment where the game takes place;
+            <br>giving them freedom to play it how they deem fit.</li>
+         </ul><br>
+
+         <li><strong>Gameplay:</strong>
+            <br>Players navigate the assassin using keyboard arrows. They must get to the patients room, but run might need to collect
+            <br>a key from another room before-hand as a side objective. Along the way, the must avoid the patroling guards and their
+            <br>flashlights; keeping in mind that the guards also have a small periphary surrounding them.
+            <br>IMPORTANT NOTE: The games gameplay is not complete:
+            <ul><li>Two of the guards have a bug that prevents them from moving and they end up blocking the way.</li>
+               <li>The walls should not be passable. I started the prototype using the P2 physics engine which worked
+                  <br>better with transparent PNG spaces, but ultimately had to change the entire prototype to ARCADE
+                  <br>because of difficulties encountered. There was also not enough time to individually add squares
+                  <br>or rectangles as walls individually.
+         </ul></li><br>
+
+         <li><strong>Prototype Goal:</strong>
+            <br>What I hoped to accomplish/practice in this prototype are the following:
+                     <ul>
+                        <li>Setting design and interaction with the enviroment.</li>
+                        <li>Character movements and animations with those movements.</li>
+                        <li>Requiring objectives in order to progress to another part of the game.</li>
+                        <li>Further practice with the Physics systems: ARCADE and P2JS
+                     </ul>
+         </li><br>
+
+         <li><strong>Features:</strong>
+            <br>The game employs stealth like mechanisms which could be developed for additional levels had their been enough time.
+            <br>For the prototype, there is not much action for the player to do except to evade guards and move their character
+            <br>around until they get to the desired destination.
+         </li><br>
+
+         <li><strong>Setting/Premise:</strong>
+            <br>The setting of the game is at a hospital, presumably during late hours in the recovery space.
+         </li><br>
+
+         <li><strong>Story:</strong>
+            <br>The main character is a contracted assassin sent to murder a unidentified patient. The motives of the assassination
+            <br>are unclear and neither are they of importance to the assassin; presumably spite, revenge, or the like.
+         </li><br>
+
+         <li><strong>Target Audience:</strong>
+            <br>Although the prototype is short and there is little reference to violence except for the end, a fuller version of the
+            <br>game might contain more violence and would therefore be unsuitable for children. However it can be targeted for anyone
+            <br>interested in the stealth genre.
+         </li><br>
+
+         <li><strong>Play Time:</strong>
+            <br>The game can take somewhere between 5 - 10 minutes.
+         </li><br>
+
+         <li><strong>Strategies:</strong>
+            <br>A good strategy is to keep a fair distance from the guards, as they have unmarked peripheral sense and will apprehend
+            <br>the player if they are near enough.
+            <br>It might also be advisable to find the key to the med room early so as to avoid the guards.
+         </li><br>
+
+         <li><strong>Prototype Assets:</strong>
+            <br>All of the image assets for this game are self-made, however an online sprite maker was used to create the general
+            <br>body for the assassin/guards:
+            <ul>
+               <li>Sprite sheet generator <a href="http://gaurav.munjal.us/Universal-LPC-Spritesheet-Character-Generator/#">spritesheet generator</a></li>
+            </ul>
+            <br>Additional assets include:
+               <li>Muisc and sound effects <a href="https://www.freesound.org/">FreeSound.org</a></li>
+         </li><br>
+
+         <li><strong>Prototype Closest Other Game:</strong>
+            <br>The games that came to mind when making this game include:
+            <ul>
+               <li><a href="https://en.wikipedia.org/wiki/Thief_(series)">Thief (series)</a></li>
+               <li><a href="https://en.wikipedia.org/wiki/To_the_Moon">To The Moon</a></li>
+         </li><br>
+
+      </ul>
+   </div>
+</body>
+</html>
