@@ -45,9 +45,8 @@ window.onload = function() {
    var endNote;
 
    var spin;
-   var spinRate = 5000;
-   var stopSpin = 5000;
-   var nextSpin = 7000;
+   var stopSpin = 4000;
+   var nextSpin = 6000;
 
    var winSound;
    var theme;
@@ -96,11 +95,11 @@ window.onload = function() {
 
       if (startNote.visible == false){
          if (game.time.now > stopSpin && play == true){
-            stopSpin = game.time.now + (spinRate * 2);
+            stopSpin += 6000;
             stopWheel();
          }
          if (game.time.now > nextSpin && play == true){
-            nextSpin = game.time.now + (spinRate * 2);
+            nextSpin += 6000;
             isMatch();
          }
          if (play == false){
@@ -113,6 +112,8 @@ window.onload = function() {
       if (game.input.activePointer.isDown && startNote.visible == true){
          startNote.visible = false;
          wheel.animations.play('spin', 10, true);
+         stopSpin = game.time.now + 4000;
+         nextSpin = game.time.now + 6000;
       }
 
    }
