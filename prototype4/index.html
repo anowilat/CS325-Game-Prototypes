@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <title>CS325 - Digital Prototype 4</title>
+   <script src="js/phaser.js"></script>
+   <script src="js/main.js"></script>
+
+   <style>
+   body
+   {
+      color: #777;
+      font-family: "Avenir", Verdana, sans-serif;
+   }
+   #readme
+   {
+      margin-top: 10px;
+   }
+   </style>
+
+</head>
+<body>
+   <div id="game"></div>
+   <div id="readme">
+      <h2>Reef Rescue</h2>
+      <ul>
+
+         <li><strong>High Concept:</strong>
+            <br>The Great Barrier Reef is environmentally threatend by pollution, climate change, and overfishing;
+            <br>coral bleaching has hit an all time high, slowly starving and killing the reefs coral.
+            <br>Players take on the role of a underwater preservationist that routinely heals and maintains
+            <br>bleached coral under time constraints.
+         </li><br>
+
+         <li><strong>Theme:</strong></li>
+         <ul><li>Preservationist</li>
+         </ul><br>
+
+         <li><strong>Mandated Variety:</strong></li>
+            <ul><li>Input: Mouse</li>
+               <li>Randomness: Some Randomness</li>
+               <li>Play styles: Storyteller/Achiever</li>
+               <li>Genres: Arcade</li>
+            </ul><br>
+
+         <li><strong>Player Experience Goals:</strong></li>
+         <ul><li>Relation to real-life events; using the Great Barrier Reef as a premise/setting for the game.</li>
+            <li>World interactivity; a tilemap to limit player movement and coral as goals for the player.</li>
+            <li>Instilling a sense of responsibility; coral that permenantly die might increase tension.</li>
+         </ul><br>
+
+         <li><strong>Gameplay:</strong>
+            <br>Players point and hold the mouse button to direct the diver underwater.
+            <br>The coral the player must heal are either slightly moving/shimmering, or are bleached in color.
+            <br>To heal a coral, players must simply swim over the coral. If a coral turns black, it's dead.
+            <br>Coral color indicators are as followed:
+            <ul><li>Full color/Shimmering: alive and at full health. Health = 3.</li>
+               <li>Bleached color: alive but losing health. Health = 2 or Health = 1.</li>
+               <li>Black color: dead, cannot be healed. Health = 0.</li>
+            </ul>
+            Players should keep in mind that the coral degrade randomly every 7 seconds.
+         </li><br>
+
+         <li><strong>Prototype Goal:</strong>
+            <br>The goal for this prototype was to take the plunge and experiment with TileMaps. The background,
+            <br>setting, and flora were designed using Tiled, with additional sprites such as the coral and the
+            <br>diver added as new entities with Phaser.
+         </li><br>
+
+         <li><strong>Features:</strong>
+            <br>Most of the game development was spent gaining an understanding of TileMaps and how to incorporate
+            <br>them into Phaser code. Gameplay is mostly simple, with the only difficulty being maintaining all
+            <br>the coral in the area. Inspiration for the gameplay was initially drawn from Snake.
+         </li><br>
+
+         <li><strong>Setting/Premise:</strong>
+            <br>The game takes place in the Great Barrier Reef off the coast of Australia, which has been suffering
+            <br>from numerous environmental threats within the last few years.
+         </li><br>
+
+         <li><strong>Story:</strong>
+            <br>As the coral of the Great Barrier Reef degrades, a wildlife preservationist and diver is charged
+            <br>with regular maintenance of the reef and its corals.
+         </li><br>
+
+         <li><strong>Target Audience:</strong>
+            <br>This game is suitable for all ages and all demographics.
+         </li><br>
+
+         <li><strong>Play Time:</strong>
+            <br>The play time for this game takes on average a few minutes, as the coral do not die all at once.
+         </li><br>
+
+         <li><strong>Strategies:</strong>
+            <br>There are six coral in the area, all of which degrade at random every 7 seconds. A random number
+            <br>generator uses the index of individual coral from the group coral, and decrease their health by 1.
+            <br>If a corals health = 2, the player still has time to heal the coral before the coral reaches
+            <br>health = 1, and subsequently dead at health = 0.
+            <br>A feature to be potentially added might be a small bar interface that tells the player what coral
+            <br>is a what health; however this might affect player gameplay and make it easier.
+         </li><br>
+
+         <li><strong>Prototype Assets:</strong>
+            <br>Assets used for the TileMap include:
+            <ul>
+               <li><a href="http://www.mapeditor.org/">Tiled TileMap Editor</a></li>
+               <li><a href="https://dl.dropboxusercontent.com/u/8107132/rpgmaker/add-ons/high-fantasy-mega-bundle.zip﻿">The High Fantasy Resource Bundle - Mega Pack</a></li>
+               <li><a href="http://spritedatabase.net/file/5382">Water Tiles</a></li>
+            </ul>
+            Additonal assets include:
+            <ul>
+               <li>Base Coral Sprite (could not find link)</li>
+               <li><a href="http://spritedatabase.net/file/5429">Diver Sprite</a></li>
+               <li><a href="http://www.freeSound.org">FreeSound.org Sounds</a></li>
+            </ul>
+               <br>
+
+         <li><strong>Prototype Closest Other Game:</strong>
+         </li><br>
+
+      </ul>
+   </div>
+</body>
+</html>
