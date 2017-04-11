@@ -15,12 +15,12 @@ window.onload = function() {
       game.load.spritesheet('car', 'assets/car_top.png', 100, 180, 5);
       game.load.spritesheet('crasher', 'assets/car_side_180x80.png', 180, 80, 6);
       game.load.spritesheet('stoplight', 'assets/stoplight_424x50.png', 424, 75, 4);
-      game.load.spritesheet('brake', 'assets/brake_119x111.png', 119, 111, 2);
-      game.load.spritesheet('accelerate', 'assets/accelerate98x150.png', 97, 150, 2);
+      game.load.spritesheet('brake', 'assets/buttons/brake_119x111.png', 119, 111, 2);
+      game.load.spritesheet('accelerate', 'assets/buttons/accelerate98x150.png', 97, 150, 2);
       game.load.spritesheet('explosion', 'assets/explosion.png', 125, 125, 8);
-      game.load.spritesheet('start', 'assets/start-sheet.png', 299, 130, 2);
-      game.load.spritesheet('custom', 'assets/custom-sheet.png', 298, 123, 2);
-      game.load.spritesheet('tutorialB', 'assets/tutorial-sheet.png', 298, 123, 2);
+      game.load.spritesheet('start', 'assets/buttons/start-sheet.png', 299, 130, 2);
+      game.load.spritesheet('custom', 'assets/buttons/custom-sheet.png', 298, 123, 2);
+      game.load.spritesheet('tutorialB', 'assets/buttons/tutorial-sheet.png', 298, 123, 2);
       game.load.spritesheet('medals', 'assets/medals_204x290.png', 203, 290, 3);
       game.load.spritesheet('red', 'assets/buttons/red.png', 50, 27, 2);
       game.load.spritesheet('black', 'assets/buttons/black.png', 50, 27, 2);
