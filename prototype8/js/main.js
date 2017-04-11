@@ -11,6 +11,7 @@ window.onload = function() {
       game.load.image('intersection', 'assets/intersection.png');
       game.load.image('tutorial', 'assets/tutorial.png');
       game.load.image('customize', 'assets/customize.png');
+      game.load.image('message', 'assets/message.png');
       game.load.spritesheet('car', 'assets/car_top.png', 100, 180, 5);
       game.load.spritesheet('crasher', 'assets/car_side_180x80.png', 180, 80, 6);
       game.load.spritesheet('stoplight', 'assets/stoplight_424x50.png', 424, 75, 4);
@@ -35,6 +36,7 @@ window.onload = function() {
       game.load.audio('explodeSound', 'assets/sounds/crash.mp3');
       game.load.audio('startSound', 'assets/sounds/ignition.wav');
       game.load.audio('win', 'assets/sounds/win.wav');
+      game.load.audio('click', 'assets/sounds/click.wav');
    }
 
    var intersection;
@@ -53,6 +55,7 @@ window.onload = function() {
 
    var tutorial;
    var custom;
+   var message;
    var startButton;
    var customButton;
    var tutorialButton;
@@ -72,6 +75,7 @@ window.onload = function() {
    var startSound;
    var explodeSound;
    var winSound;
+   var clickSound;
 
    var started = false;
    var oppStarted = false;
@@ -156,6 +160,9 @@ window.onload = function() {
       custom = game.add.sprite(85, 300, 'customize');
       custom.visible = false;
       custom.fixedToCamera = true;
+      message = game.add.sprite(85, 580, 'message');
+      message.visible = false;
+      message.fixedToCamera = true;
 
       red = game.add.button(400, 390, 'red', red, this, 1, 2, 0);
       red.fixedToCamera = true;
@@ -198,6 +205,7 @@ window.onload = function() {
       music = game.add.audio('music');
       winSound = game.add.audio('win');
       startSound = game.add.audio('startSound');
+      clickSound = game.add.audio('click');
 
       setLapState();
       oppIsCrashing1 = game.rnd.integerInRange(0, 1);
@@ -254,6 +262,7 @@ window.onload = function() {
 
    function startGame(){
 
+      lap.text = "LAP: " + (playerWrap + 1);
       startSound.play();
       music.loopFull();
       tutorial.visible = false;
@@ -277,6 +286,8 @@ window.onload = function() {
 
    function customMenu(){
 
+      lap.text = "TOTAL LAPS: " + totalLaps;
+      clickSound.play();
       customButton.visible = false;
       tutorialButton.visible = true;
       tutorial.visible = false;
@@ -295,6 +306,8 @@ window.onload = function() {
 
    function tutorialMenu(){
 
+      lap.text = "LAP: " + (playerWrap + 1);
+      clickSound.play();
       tutorialButton.visible = false;
       customButton.visible = true;
       custom.visible = false;
@@ -379,6 +392,7 @@ window.onload = function() {
       explosion.visible = true;
       explosion.animations.play('explode', 15, false);
       explodeSound.play();
+      message.visible = true;
    }
 
    function manageOpponentAI(){
@@ -491,6 +505,7 @@ window.onload = function() {
 
    function red(){
 
+      clickSound.play();
       player.frame = 3;
       opponent1.frame = game.rnd.integerInRange(0, 2);
       opponent2.frame = game.rnd.integerInRange(4, 5);
@@ -498,6 +513,7 @@ window.onload = function() {
 
    function black(){
 
+      clickSound.play();
       player.frame = 0;
       opponent1.frame = game.rnd.integerInRange(3, 4);
       opponent2.frame = game.rnd.integerInRange(1, 2);
@@ -505,6 +521,7 @@ window.onload = function() {
 
    function blue(){
 
+      clickSound.play();
       player.frame = 2;
       opponent1.frame = game.rnd.integerInRange(0, 1);
       opponent2.frame = game.rnd.integerInRange(3, 5);
@@ -512,6 +529,7 @@ window.onload = function() {
 
    function green(){
 
+      clickSound.play();
       player.frame = 1;
       opponent1.frame = game.rnd.integerInRange(2, 3);
       opponent2.frame = game.rnd.integerInRange(4, 5);
@@ -519,6 +537,7 @@ window.onload = function() {
 
    function yellow(){
 
+      clickSound.play();
       player.frame = 4;
       opponent1.frame = game.rnd.integerInRange(0, 1);
       opponent2.frame = game.rnd.integerInRange(2, 3);
@@ -526,26 +545,36 @@ window.onload = function() {
 
    function five(){
 
+      clickSound.play();
       totalLaps = 5;
+      lap.text = "TOTAL LAPS: " + totalLaps;
    }
 
    function ten(){
 
+      clickSound.play();
       totalLaps = 10;
+      lap.text = "TOTAL LAPS: " + totalLaps;
    }
 
    function twenty(){
 
+      clickSound.play();
       totalLaps = 25;
+      lap.text = "TOTAL LAPS: " + totalLaps;
    }
 
    function fifty(){
 
+      clickSound.play();
       totalLaps = 50;
+      lap.text = "TOTAL LAPS: " + totalLaps;
    }
 
    function infinity(){
 
+      clickSound.play();
       totalLaps = -1;
+      lap.text = "TOTAL LAPS: ENDLESS MODE";
    }
 };
