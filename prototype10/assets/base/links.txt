@@ -1,6 +1,0 @@
-alley : http://pixeljoint.com/pixelart/92902.htm
-cityscape: http://www.wallchan.com/wallpaper/9158/download/
-tv : https://opengameart.org/content/pixel-art-tv-sprite-cc0
-soldier : https://www.codeproject.com/Articles/756189/Master-Chief-CreateJS-TypeScript
-hero : http://heartofthesunrise.deviantart.com/art/Run-Cycle-606367522
-crate : http://spritedatabase.net/file/18827
